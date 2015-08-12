@@ -12,22 +12,34 @@ class SiteController extends Controller
 		//get image slider
 		$model = new AdvertiseAR('getBanner');
 		$model->status = 1;
-		$model->cat_id = 1;
+		$model->cat_id = 2;
 		$advertise = $model->getBanner();
 		
 		// get 1 image right
 		$model->status = 1;
-		$model->cat_id = 2;
+		$model->cat_id = 3;
 		$image_right_1 = $model->getOneImage();
 		
 		// get 1 image right
 		$model->status = 1;
-		$model->cat_id = 3;
+		$model->cat_id = 4;
 		$image_right_2 = $model->getOneImage();
+		
+		// get 3 image right
+		$model->status = 1;
+		$model->cat_id = 5;
+		$model->limit = 3;
+		$image_right_3 = $model->getListImage();
 
-		//product index
+		//product not bat
 		$model = new ProductAR();
-		$product = $model->getList(12);
+		$model->noibat = 1;
+		$noibat = $model->getList(4);
+		
+		//product hot
+		$model = new ProductAR();
+		$model->hot = 1;
+		$hot = $model->getList(8);
 
 		//title
 
@@ -39,7 +51,8 @@ class SiteController extends Controller
 
 		$this->layout = 'main';
 
-		$this->render('index', compact('advertise', 'product', 'title', 'image_right_1', 'image_right_2', 'intro_product'));
+		$this->render('index', compact('advertise', 'noibat', 'hot', 'title',
+			 'image_right_1', 'image_right_2', 'intro_product', 'image_right_3'));
 	}
 
 	/**

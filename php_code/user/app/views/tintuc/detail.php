@@ -1,26 +1,42 @@
 
-<div id="content" class="main">
-	
-	<div class="col-md-9 content-box" style="background: #f8f8f8; padding: 10px 5px;">
-		<h1 class="title"><?php echo $tintuc->name?></h1>
-
-		<?php echo $tintuc->content?>
-
-		<div>
+    <div id="cphMain_ctl00_TopPane" class="top"></div>
+    <div id="cphMain_ctl00_RightPane" class="right"></div>
+    <div id="cphMain_ctl00_ContentPane" class="center">
+<div id="content_document" class="NewsDetailContainer DefaultModule DetailItem">
+    <div class="defaultTitle newsDetail_Header">
+        <h1 class="newsDetail_Title">
+            <?php echo $tintuc->name?></h1>
+    </div>
+    <div class="defaultContent newsDetail-content newsList-content">
+        <div class="Block newsDetail_Content Clear" style="overflow: hidden">
+            <?php echo $tintuc->content?>
+        </div>
+        
+        <br class="Clear">
+        
 		<?php
 			if($ortherList):
 		?>
-		<h3 class="title">Bài viết khác</h3>
-		<ul class="toggle_content tree dhtml store_list" style="padding-left: 15px;">
-			<?php
-				foreach ($ortherList as $v):
-			?>
-			<li><a href="<?php echo app()->baseUrl;?>/tin-tuc/chi-tiet/<?php echo $v->id?>/<?php echo $v->alias?>.html"><i class="icon-caret-right"></i><?php echo $v->name?></a>
-			</li>
-			<?php endforeach;?>
-		</ul>
-		<?php endif;?>
-	</div>
-	</div>
-	
+        <div class="newsDetail_OrtherNews">
+            <div class="newsDetail_OrtherNews_Label">
+                Các tin khác:
+            </div>
+            <div class="newsDetail_OtherNews_List">
+                <?php
+    				foreach ($ortherList as $v):
+    			?>
+                        <div>
+                            <a href="<?php echo app()->baseUrl;?>/tin-tuc/chi-tiet/<?php echo $v->id?>/<?php echo $v->alias?>.html" class="newsDetail_OrtherNews_Link">
+                                <span><?php echo $v->name?></span> </a>
+                        </div>
+                        <?php endforeach;?>
+            </div>
+        </div>
+        <?php endif;?>
+    </div>
+    <div class="defaultFooter newsDetail-footer newsList-footer">
+        <div>
+        </div>
+    </div>
+</div>
 </div>

@@ -55,6 +55,7 @@ return array(
 				'khach-hang/chi-tiet/<id:\w+>/<alias:[\s\S]+>' => 'khachhang/detail',
 				'dich-vu' => 'dichvu',
 				'san-pham.html' => 'product',
+				'gioi-thieu.html' => 'gioithieu',
 				'san-pham' => 'product',
 				'chi-tiet/<id:\w+>/<alias:[\s\S]+>' => 'product/detail',
 				'tu-van/detail/<id:\w+>/<alias:[\s\S]+>' => 'tuvan/detail',

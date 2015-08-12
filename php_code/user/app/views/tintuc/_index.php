@@ -1,11 +1,20 @@
-
-<li class="clearfix shop_box">
-	<a class="span2" style="margin-left: 0px;" href="<?php echo url('/tin-tuc/chi-tiet/' . $data->id . '/' . $data->alias.'.html')?>"
-	 title="<?php echo $data->name?>"><img src="<?php echo app()->baseUrl?>/uploads/<?php echo $data->image?>" alt="<?php echo $data->name?>"></a>
-	<div class="span10">
-		<h5><a class="product_link" href="<?php echo url('/tin-tuc/chi-tiet/' . $data->id . '/' . $data->alias.'.html')?>"
-		 title="<?php echo $data->name?>"><?php echo $data->name?></a></h5>
-		<p class="product_descr"><?php echo cutStr(html_entity_decode($data->description, ENT_QUOTES, 'UTF-8'), 100)?></p>
-	</div>
-</li>
+<tr class="newsList_Seperator">
+    <td class="newsList_Image">
+        <a href="<?php echo url('/tin-tuc/chi-tiet/' . $data->id . '/' . $data->alias.'.html')?>">
+            <img src="<?php echo app()->baseUrl?>/uploads/<?php echo $data->image?>" alt="<?php echo $data->name?>">
+        </a>
+    </td>
+    <td class="newsList_Content">
+        <div>
+            <a href="<?php echo url('/tin-tuc/chi-tiet/' . $data->id . '/' . $data->alias.'.html')?>" class="newsList_Title">
+                <?php echo $data->name?>
+            </a>
+        </div>
+        <div>
+            <span class="newsList_Summary">
+				<?php echo CutStr(html_decode($data->description), 100)?>
+                </span> <span class="newsList_LinkDetail"></span>
+        </div>
+    </td>
+</tr>
 													

@@ -4,6 +4,46 @@
     margin:0;
 }
 
+.img_pro { height: 192px; max-width: 212px;}
+
+.pagination {
+	float: left;
+	list-style-type: none;
+	margin: 0;
+}
+.pagination ul {
+	border-radius: 0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+	-moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+.pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
+	border-radius: 0px;
+}
+.pagination li {
+    float: left;
+}
+.pagination ul > li:last-child > a, .pagination ul > li:last-child > span {
+	border-radius: 0px;
+}
+.pagination ul > li > a, .pagination ul > li > span {
+	text-decoration:none;
+	color: #636363;
+	font-family:Tahoma;
+	background:#F9F9F9;
+	border:1px solid #E6E6E6;
+	padding:3px 6px;
+	font-size:11px;
+    margin-left: 10px; 
+}
+.pagination a:hover, .pagination .active a{
+    background:gray;
+	color:#FFFFFF;
+	font-family:Tahoma;
+	border-color:#E6E6E6;
+}
+
+
 /* General */
 body {
     font-family: arial, Arial, Helvetica, sans-serif;
@@ -459,7 +499,7 @@ hr {
 #nav ul.level0 li.level1 a {
     padding: 3px 0;
     text-transform: none;
-    background:url("Images/list_style2.jpg") no-repeat scroll 0px 9px transparent;
+    background:url("images/list_style2.jpg") no-repeat scroll 0px 9px transparent;
     color: #555555;
     font-size: 14px;
     box-sizing:border-box;
@@ -474,13 +514,13 @@ hr {
     padding: 2px 0;
     text-transform: none;
     color: #01a7b2;
-    background:url("Images/list_style4.gif") no-repeat scroll 11px 12px transparent;
+    background:url("images/list_style4.gif") no-repeat scroll 11px 12px transparent;
     border-top:solid 1px #a6d1e5;
 }
 #nav li ul li.level1 ul li.level2:hover a
 {
     text-decoration: none;
-    background: url("Images/list_style4.gif") no-repeat scroll 11px 12px #3d8eb4;
+    background: url("images/list_style4.gif") no-repeat scroll 11px 12px #3d8eb4;
     color: white;
 }
 #nav li ul li.level1 ul li.level2.first a
@@ -495,7 +535,7 @@ hr {
 #nav ul.level0 li a:hover
 {
     text-decoration:none;
-    background:url("Images/list_style2-hover.jpg") no-repeat scroll 0px 9px;
+    background:url("images/list_style2-hover.jpg") no-repeat scroll 0px 9px;
     transition: all 0.4s ease-in-out 0s;
     margin-left:10px;
 }
@@ -747,7 +787,7 @@ hr {
 }
 #vertical-menu ul ul li.level1 ul li.level2 a
 {
-    background: url("Images/list_style3.jpg") no-repeat scroll 0 9px transparent;
+    background: url("images/list_style3.jpg") no-repeat scroll 0 9px transparent;
     border-left: 0 none;
     box-sizing: border-box;
     color: #555555;
@@ -761,7 +801,7 @@ hr {
 }
 #vertical-menu ul ul li.level1 ul li.level2 a:hover
 {
-    background: url("Images/list_style3-hover.jpg") no-repeat scroll 0 9px transparent;
+    background: url("images/list_style3-hover.jpg") no-repeat scroll 0 9px transparent;
     color: #01a7b2;
     margin-left:10px;
 }
@@ -906,7 +946,7 @@ border-right:0px;
 }*/
 .TopSellers .BlockContent .ProductList .TopSellerNumber1
 {
-    background: url("Images/1st.png") no-repeat scroll 0 0 transparent;
+    background: url("images/1st.png") no-repeat scroll 0 0 transparent;
     color: #fff;
     display: block;
     float: left;
@@ -934,7 +974,7 @@ border-right:0px;
 }
 .TopSellers .BlockContent .ProductList .TopSellerNumber
 {
-    background: url("Images/nst.gif") no-repeat scroll 0 0 transparent;
+    background: url("images/nst.gif") no-repeat scroll 0 0 transparent;
     color: #FFFFFF;
     float: left;
     font-family: arial;
@@ -977,7 +1017,7 @@ border-right:0px;
 }
 #menu-news ul li a:link, #menu-news ul li a:visited
 {
-    background: url("Images/list_style.gif") no-repeat scroll 3px 9px transparent;
+    background: url("images/list_style.gif") no-repeat scroll 3px 9px transparent;
     color: #323232;
     display: block;
     font-size: 11px;
@@ -986,7 +1026,7 @@ border-right:0px;
 }
 #menu-news ul ul li.level1 a:link, #menu-news ul ul li.level1 a:visited
 {
-    background: url("Images/list_style1.gif") no-repeat scroll 18px 10px transparent;
+    background: url("images/list_style1.gif") no-repeat scroll 18px 10px transparent;
     color: #3B3B3B;
     display: block;
     font-size: 11px;
@@ -995,7 +1035,7 @@ border-right:0px;
 }
 #menu-news ul ul ul li.level2 a:link, #menu-news ul ul ul li.level2 a:visited
 {
-    background: url("Images/list_style1.gif") no-repeat scroll 30px 10px transparent;
+    background: url("images/list_style1.gif") no-repeat scroll 30px 10px transparent;
     color: #3B3B3B;
     display: block;
     font-size: 11px;
@@ -1246,7 +1286,7 @@ background-image: linear-gradient(to bottom, #57A8C8 19%, #136FB1 49%);
 }
 .iconSprite
 {
-    background: url("Images/saleflag.png") no-repeat scroll 0 0 transparent;
+    background: url("images/saleflag.png") no-repeat scroll 0 0 transparent;
     display: block;
 }
 .salePercentFlag, .newFlag, .outletFlag, .saleFlag
@@ -1281,37 +1321,37 @@ background-image: linear-gradient(to bottom, #57A8C8 19%, #136FB1 49%);
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating0.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating0.gif) 0px 0px no-repeat;
 }
 .ProductRating.Rating1 .RatingImage
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating1.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating1.gif) 0px 0px no-repeat;
 }
 .ProductRating.Rating2 .RatingImage
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating2.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating2.gif) 0px 0px no-repeat;
 }
 .ProductRating.Rating3 .RatingImage
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating3.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating3.gif) 0px 0px no-repeat;
 }
 .ProductRating.Rating4 .RatingImage
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating4.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating4.gif) 0px 0px no-repeat;
 }
 .ProductRating.Rating5 .RatingImage
 {
     width:60px;
     height:12px;
-    background: url(Images/Rating/IcoRating5.gif) 0px 0px no-repeat;
+    background: url(images/Rating/IcoRating5.gif) 0px 0px no-repeat;
 }
 .ProductList .ProductRating .RatingImage
 {
@@ -1394,7 +1434,7 @@ table.newsList_Item
     border-collapse: collapse;
     width: 100%;
 }
-div.newsList hr.newsList_Seperator
+div.newsList tr.newsList_Seperator
 {
     border-bottom: 1px solid #ddd;
     height:1px;
@@ -1454,7 +1494,7 @@ div.newsDetail_OrtherNews div.newsDetail_OrtherNews_Label
 }
 div.newsDetail_OrtherNews div.newsDetail_OtherNews_List a.newsDetail_OrtherNews_Link:link, div.newsDetail_OrtherNews div.newsDetail_OtherNews_List a.newsDetail_OrtherNews_Link:visited
 {
-    background: url("Images/list_style1.gif") no-repeat scroll 0 5px transparent;
+    background: url("images/list_style1.gif") no-repeat scroll 0 5px transparent;
     color: #3e414c;
     padding-left: 10px;
     font-size: 12px;
@@ -1520,7 +1560,7 @@ em.ProductPrice {
     background-repeat:no-repeat;
     background-position:right;
 }
-#ProductDetails .listImages ul li {
+#ProductDetails .listimages ul li {
     border: medium none !important;
     margin: 0 3px;
     padding: 2px;
@@ -3055,7 +3095,8 @@ button.button > span {
     padding:0 25px;
 }
 input[type="submit"],
-input[type="button"]
+input[type="button"],
+input[type="reset"]
 {
     background: none repeat scroll 0 0 #fff;
     border: 1px solid #333333;

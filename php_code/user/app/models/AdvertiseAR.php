@@ -7,6 +7,7 @@ class AdvertiseAR extends BaseAR
 	 * @return AdminAR the static model class
 	 */
 	public $word;
+	public $limit;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -113,6 +114,8 @@ class AdvertiseAR extends BaseAR
 		if(strlen($this->word) > 0)
 			$criteria->compare('name',$this->word,true);
 		$criteria->order = 't.id DESC';
+		if(strlen($this->limit) > 0)
+			$criteria->limit = $this->limit;
 		return $criteria;
 	}
 

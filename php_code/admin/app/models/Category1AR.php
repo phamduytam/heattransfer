@@ -108,7 +108,7 @@ class Category1AR extends BaseAR
 			$criteria->addCondition('parent_id = :parent_id')->params[':parent_id'] = $this->parent_id;
 		}
 
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $criteria;
 	}
 
@@ -132,7 +132,7 @@ class Category1AR extends BaseAR
 		}
 		$criteria->addCondition('parent_id = :parent_id')->params[':parent_id'] = 0;
 		
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $this->searchList_Ex($criteria, $pageSize, $maxPage);
 	}
 
@@ -150,7 +150,7 @@ class Category1AR extends BaseAR
 		}
 		$criteria->addCondition('parent_id <> :parent_id')->params[':parent_id'] = 0;
 		
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $this->searchList_Ex($criteria, $pageSize, $maxPage);
 	}
 
@@ -168,7 +168,7 @@ class Category1AR extends BaseAR
 		}
 		$criteria->addCondition('parent_id = :parent_id')->params[':parent_id'] = 0;
 		
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $this->findAll($criteria);
 	}
 
@@ -186,7 +186,7 @@ class Category1AR extends BaseAR
 		}
 		$criteria->addCondition('parent_id <> :parent_id')->params[':parent_id'] = 0;
 		
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $this->findAll($criteria);
 	}
 

@@ -1,14 +1,16 @@
-<div id="content" class="products_block">
-	<div style="overflow: hidden">
-			<ul class="breadcrumb col-md-6">
-				<li><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
-				<li>Tin tức</li>
-			</ul>
 
-	</div>
-	<h3 class="title">Tin tức</h3>
-	<ul>
-				<?php
+    <div id="cphMain_ctl00_TopPane" class="top"></div>
+    <div id="cphMain_ctl00_RightPane" class="right"></div>
+    <div id="cphMain_ctl00_ContentPane" class="center">
+<div class="NewsListContainer DefaultModule ListItems">
+    <div class="newsCategory defaultTitle">
+        <h1>
+            Tin tức</h1>
+    </div>
+    <div class="defaultContent newsList">
+        
+                <table class="newsList_Item" cellpadding="0" cellspacing="0">
+                    <?php
 					$listView = $this->widget('zii.widgets.CListView', array(
 						'dataProvider'=>$content,
 						'summaryText'=>'',
@@ -16,9 +18,9 @@
 						'template'=>"{items}",
 					));
 				?>
-	</ul>
-
-		<?php
+                    </table>
+<div class="PageNavigation" style="padding-bottom: 10px; padding-top: 10px;" align="center">
+    <?php
 		$pagerCssClass	=	'pagination';
 		$pager			=	array(
 									'class'=>'TbPager',
@@ -32,5 +34,14 @@
 		$listView->pager = $pager;
 		$listView->renderPager();
 		?>
+</div>
 
+    </div>
+    <div class="clear defaultFooter newsList-footer">
+        <div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
 </div>

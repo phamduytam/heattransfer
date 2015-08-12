@@ -101,7 +101,7 @@ class CategoryAR extends BaseAR
 		if(strlen($this->word) > 0){
 			$criteria->compare('name', $this->word, true);
 		}
-		$criteria->order = 'id DESC';
+		$criteria->order = 'ordering ASC';
 		return $criteria;
 	}
 

@@ -62,6 +62,15 @@ $this->pageTitle = 'Product';
 </div>
 
 <div class="form-group">
+	<?php echo $form->labelEx($model,'banchay'); ?>
+	<?php echo $form->checkBox($model,'banchay', array('checked' => $model->banchay)); ?>
+	<?php echo $form->labelEx($model,'noibat'); ?>
+	<?php echo $form->checkBox($model,'noibat', array('checked' => $model->noibat)); ?>
+	<?php echo $form->labelEx($model,'hot'); ?>
+	<?php echo $form->checkBox($model,'hot', array('checked' => $model->hot)); ?>
+</div>
+
+<div class="form-group">
 	<?php echo $form->labelEx($model,'order'); ?>
 	<?php echo $form->textField($model,'order', array('class' => 'form-control')); ?>
 </div>

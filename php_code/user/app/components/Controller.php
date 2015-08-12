@@ -73,6 +73,14 @@ class Controller extends CController
 		$advertise = $model->getBanner();
 		return $advertise;
 	}
+	
+	public function getImageLeft() {
+		$model = new AdvertiseAR();
+		$model->status = 1;
+		$model->cat_id = 6;
+		$image_left = $model->getListImage();
+		return $image_left;
+	}
 
 	public function getDescription()
 	{
@@ -83,6 +91,14 @@ class Controller extends CController
 			if ($description)
 				return html_entity_decode(strip_tags($description->content), ENT_QUOTES, 'UTF-8');
 		}
+	}
+	
+	public function getThuongHieu() {
+		$model = new AdvertiseAR();
+		$model->status = 1;
+		$model->cat_id = 7;
+		$image = $model->getListImage();
+		return $image;
 	}
 
 	public function getKeyWord()
@@ -115,9 +131,9 @@ class Controller extends CController
 	{
 
 		if(strlen($this->fbImage))
-			return 'http://banghepallet.vn/uploads/'.$this->fbImage;
+			return 'http://heattransferlabel.com.vn/uploads/'.$this->fbImage;
 		else{
-			return 'http://banghepallet.vn/img/ban-ghe-pallet.jpg';
+			return 'http://heattransferlabel.com.vn/sites/97934/upload/Logo/201517133958263.png';
 		}	
 	}
 
@@ -143,8 +159,8 @@ class Controller extends CController
 	 * Bai viet SEO
 	 */
 	public function getTintuc() {
-		$model = new StaticAR();
-		$tintuc = $model->getList();
+		$model = new TintucAR();
+		$tintuc = $model->getList(2);
 		if($tintuc)
 			return $tintuc;
 		return false;
@@ -194,9 +210,11 @@ class Controller extends CController
 
 	}
 
-	public function getProduct() {
+	public function getBanChay() {
 		$model = new ProductAR();
-		$product = $model->getList(10);
+		$model->banchay = 1;
+		$model->status = 1;
+		$product = $model->getList(6);
 		if($product)
 			return $product;
 		return false;

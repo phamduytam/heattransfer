@@ -9,6 +9,9 @@ class ProductAR extends BaseAR
 	public $word;
 	public $cat_id;
 	public $cat1_id;
+	public $banchay;
+	public $hot;
+	public $noibat;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -44,7 +47,7 @@ class ProductAR extends BaseAR
 			array('name', 'required', 'message' => 'Vui lòng nhập tên sản phẩm'),
 			array('content', 'required', 'message' => 'Vui lòng nhập nội dung'),
 			array('image', 'file', 'allowEmpty'=>true, 'types' => 'jpg, gif, png, jpeg', 'maxSize' => 2048*1000, 'wrongType' => 'Image không đúng định dạng ', 'tooLarge' => 'Image quá lớn'),
-			array('description, order, status', 'safe')
+			array('description, order, status, banchay, noibat, hot', 'safe')
 		);
 	}
 
@@ -73,6 +76,10 @@ class ProductAR extends BaseAR
 			'order'			=> 'Thứ tự',
 			'status'		=> 'Tình trạng',
 			'created'		=> 'Ngày tạo',
+			'banchay'		=> 'Bán chạy',
+			'noibat'		=> 'Nỗi bật',
+			'hot'			=> 'Hot',
+			
 		);
 	}
 
@@ -129,6 +136,10 @@ class ProductAR extends BaseAR
 		$criteria = new CDbCriteria();
 		$criteria->select = '*';
 		$criteria->addCondition('t.status = :status')->params[':status'] = 1;
+		if(strlen($this->noibat) > 0)
+			$criteria->addCondition('t.noibat = :noibat')->params[':noibat'] = $this->noibat;
+		if(strlen($this->hot) > 0)
+			$criteria->addCondition('t.hot = :hot')->params[':hot'] = $this->hot;	
 		$criteria->order = 'id DESC';
 		$criteria->limit = $limit;
 		return $this->findAll($criteria);

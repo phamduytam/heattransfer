@@ -25,7 +25,7 @@ $setting['db_master'] = array(
 	'connectionString' => 'mysql:host=127.0.0.1;dbname=heattransfer',//banghepa_db
 	'emulatePrepare' => true,
 	'username' => 'root',///banghepa_user
-	'password' => 'root',//admw9465zdkb
+	'password' => '',//admw9465zdkb
 	'charset' => 'utf8',
 	'enableProfiling' => true,    // SQL文
 	'enableParamLogging' => true, // パラメータ表示に必要

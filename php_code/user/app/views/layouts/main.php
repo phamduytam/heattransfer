@@ -42,8 +42,9 @@
             <div id="Header">
                 <div id="Logo">
                     <div id="LogoContainer">
+                        <?php $logo = $this->getLogo();?>
                         <a href="<?php echo app()->baseUrl;?>"><img
-                            src='<?php echo app()->baseUrl;?>sites/97934/upload/Logo/201517133958263.png' /></a>
+                            src='<?php echo $logo ? app()->baseUrl . '/uploads/' . $logo->image : app()->baseUrl.'sites/97934/upload/Logo/201517133958263.png' ?>' /></a>
                     </div>
                 </div>
                 <div id="SearchForm">
@@ -69,7 +70,7 @@
                         <ul id="nav">
 
                             <li id="nav-1"
-                                class="level0 nav-1 first current parent"
+                                class="level0 nav-1 first <?php echo $this->id == 'site' ? 'current' : ''?> parent"
                                 style="z-index: 2000;"><a href="<?php echo app()->baseUrl;?>/"> <span>Trang
                                         chủ</span>
                             </a>
@@ -77,7 +78,7 @@
 
                                 </ul></li>
 
-                            <li id="nav-2" class="level0 nav-2 parent"
+                            <li id="nav-2" class="level0 nav-2 parent <?php echo $this->id == 'gioithieu' ? 'current' : ''?> "
                                 style="z-index: 2000;"><a
                                 href="<?php echo app()->baseUrl;?>/gioi-thieu.html"> <span>Giới
                                         thiệu</span>
@@ -86,7 +87,7 @@
 
                                 </ul></li>
 
-                            <li id="nav-3" class="level0 nav-3 parent"
+                            <li id="nav-3" class="level0 nav-3 parent <?php echo $this->id == 'product' ? 'current' : ''?> "
                                 style="z-index: 2000;"><a
                                 href="<?php echo app()->baseUrl;?>/san-pham.html"> <span>Sản phẩm</span>
                             </a>
@@ -94,7 +95,7 @@
 
                                 </ul></li>
 
-                            <li id="nav-4" class="level0 nav-4 parent"
+                            <li id="nav-4" class="level0 nav-4 parent <?php echo $this->id == 'tintuc' ? 'current' : ''?> "
                                 style="z-index: 2000;"><a
                                 href="<?php echo app()->baseUrl;?>/tin-tuc.html"> <span>Tin tức</span>
                             </a>
@@ -102,7 +103,7 @@
 
                                 </ul></li>
 
-                            <li id="nav-6" class="level0 nav-6 parent"
+                            <li id="nav-6" class="level0 nav-6 parent <?php echo $this->id == 'contact' ? 'current' : ''?> "
                                 style="z-index: 2000;"><a
                                 href="<?php echo app()->baseUrl;?>/lien-he.html"> <span>Liên hệ</span>
                             </a>
@@ -152,88 +153,22 @@
                             <div
                                 class="defaultContent cate-menu-content">
                                 <ul>
-
+                                    <?php
+                                        $category = $this->getCategory();
+                                        if($category):
+                                            foreach ($category as $v):
+                                        ?>
                                     <li
-                                        class="level0 level0-1668590 first">
+                                        class="level0">
                                         <a
-                                        href="/may-nen-khi-b1668590.html">
-                                            Máy nén khí </a>
+                                        href="<?php echo app()->baseUrl;?>/san-pham/<?php echo $v->alias?>.html">
+                                            <?php echo $v->name?> </a>
 
                                     </li>
-
-                                    <li class="level0 level0-1668591"><a
-                                        href="/may-phat-dien-b1668591.html">
-                                            Máy phát điện </a></li>
-
-                                    <li class="level0 level0-1668592"><a
-                                        href="/thiet-bi-cong-nghiep-b1668592.html">
-                                            Thiết bị công nghiệp </a>
-
-                                        <div style="display: block">
-                                            <ul>
-
-                                                <li
-                                                    class="level1 level1-1668596 first">
-                                                    <a
-                                                    href="/dung-cu-cam-tay-b1668596.html">
-                                                        Dụng cụ cầm tay
-                                                </a>
-
-                                                </li>
-
-                                                <li
-                                                    class="level1 level1-1668597">
-                                                    <a
-                                                    href="/vong-dem-b1668597.html">
-                                                        Vòng đệm </a>
-
-                                                </li>
-
-                                                <li
-                                                    class="level1 level1-1668598">
-                                                    <a
-                                                    href="/dung-cu-o-to-b1668598.html">
-                                                        Dụng cụ ô tô </a>
-
-                                                </li>
-
-                                                <li
-                                                    class="level1 level1-1668599">
-                                                    <a
-                                                    href="/dung-cu-chay-pin-b1668599.html">
-                                                        Dụng cụ chạy pin
-                                                </a>
-
-                                                </li>
-
-                                                <li
-                                                    class="level1 level1-1668600">
-                                                    <a
-                                                    href="/may-do-cong-nghiep-b1668600.html">
-                                                        Máy đo công
-                                                        nghiệp </a>
-
-                                                </li>
-
-                                                <li
-                                                    class="level1 level1-1668601">
-                                                    <a
-                                                    href="/phu-kien-cong-nghiep-b1668601.html">
-                                                        Phụ kiện công
-                                                        nghiệp </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </div></li>
-
-                                    <li class="level0 level0-1668593"><a
-                                        href="/may-hut-bui-b1668593.html">
-                                            Máy hút bụi </a></li>
-
-                                    <li class="level0 level0-1668594"><a
-                                        href="/dung-cu-han-b1668594.html">
-                                            Dụng cụ hàn </a></li>
+                                    <?php
+                                            endforeach;
+                                        endif;
+                                        ?>
 
                                 </ul>
                             </div>
@@ -241,7 +176,10 @@
                                 <div></div>
                             </div>
                         </div>
-
+                        <?php
+                            $banchay = $this->getBanChay();
+                            if($banchay):
+                            ?>
                         <div id="SideTopSeller"
                             class="TopSellers Moveable Panel DefaultModule">
                             <div
@@ -253,281 +191,27 @@
                                 <div class="BlockContent">
 
                                     <ul class="ProductList">
-
-                                        <li class="Odd first"
-                                            style="padding-top: 15px;">
-                                            <div
-                                                class="TopSellerNumber1">
-                                                1</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: block">
-                                                <a class=""
-                                                    href='/banh-cua-6197329.html'>
+                                        <?php foreach($banchay as $v):?>
+                                        <li class="Odd first" style="padding-top: 15px;">
+                                            <div id="ProductImage" class="ProductImage" style="display: block">
+                                                <a class="" href='<?php echo app()->baseUrl;?>/chi-tiet/<?php echo $v->id?>/<?php echo $v->alias?>.html'>
                                                     <img
-                                                    src="Thumbnails//sites/97934/data/images/2014/12/2523908ab9_5.192.192.jpg"
-                                                    alt="Bánh cưa"
-                                                    title="Bánh cưa" />
+                                                    src="<?php echo app()->baseUrl;?>/uploads/<?php echo $v->image?>"
+                                                    alt="<?php echo $v->name;?>"
+                                                    title="<?php echo $v->name;?>" />
                                                 </a>
                                             </div>
                                             <div class="ProductDetails">
                                                 <strong><a
-                                                    href='/banh-cua-6197329.html'>
-                                                        Bánh cưa</a></strong>
+                                                    href='<?php echo app()->baseUrl;?>/chi-tiet/<?php echo $v->id?>/<?php echo $v->alias?>.html'>
+                                                        <?php echo $v->name;?></a></strong>
                                             </div>
                                             <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    450.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
+                                                <span class="special-price"><?php echo cutStr(html_decode($v->description), 50);?></span>
                                             </div>
                                             <hr class="Clear" />
                                         </li>
-
-                                        <li class="Even" style="">
-                                            <div class="TopSellerNumber">
-                                                2</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: none">
-                                                <a class=""
-                                                    href='/may-dieu-chinh-nhiet-do-dong-co-bosch-6197328.html'>
-                                                    <img
-                                                    src="Thumbnails//sites/97934/data/images/2014/12/2106896ab9_4.192.192.jpg"
-                                                    alt="Máy điều chỉnh nhiệt độ động cơ Bosch"
-                                                    title="Máy điều chỉnh nhiệt độ động cơ Bosch" />
-                                                </a>
-                                            </div>
-                                            <div class="ProductDetails">
-                                                <strong><a
-                                                    href='/may-dieu-chinh-nhiet-do-dong-co-bosch-6197328.html'>
-                                                        Máy điều chỉnh
-                                                        nhiệt độ động cơ
-                                                        Bosch</a></strong>
-                                            </div>
-                                            <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    3.200.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
-                                            </div>
-                                            <hr class="Clear" />
-                                        </li>
-
-                                        <li class="Odd " style="">
-                                            <div class="TopSellerNumber">
-                                                3</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: none">
-                                                <a class=""
-                                                    href='/rang-cua-cobalt-6197327.html'>
-                                                    <img
-                                                    src="Thumbnails//sites/97934/data/images/2014/12/0458159ab9_1.192.192.jpg"
-                                                    alt="Răng cưa Cobalt"
-                                                    title="Răng cưa Cobalt" />
-                                                </a>
-                                            </div>
-                                            <div class="ProductDetails">
-                                                <strong><a
-                                                    href='/rang-cua-cobalt-6197327.html'>
-                                                        Răng cưa Cobalt</a></strong>
-                                            </div>
-                                            <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    2.000.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
-                                            </div>
-                                            <hr class="Clear" />
-                                        </li>
-
-                                        <li class="Even" style="">
-                                            <div class="TopSellerNumber">
-                                                4</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: none">
-                                                <a class=""
-                                                    href='/gia-do-6197326.html'>
-                                                    <img
-                                                    src="Thumbnails//sites/97934/data/images/2014/12/535440316416120_xe_day_hang_ok.192.192.jpg"
-                                                    alt="Giá đỡ"
-                                                    title="Giá đỡ" />
-                                                </a>
-                                            </div>
-                                            <div class="ProductDetails">
-                                                <strong><a
-                                                    href='/gia-do-6197326.html'>
-                                                        Giá đỡ</a></strong>
-                                            </div>
-                                            <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    799.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
-                                            </div>
-                                            <hr class="Clear" />
-                                        </li>
-
-                                        <li class="Odd " style="">
-                                            <div class="TopSellerNumber">
-                                                5</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: none">
-                                                <a class=""
-                                                    href='/van-cong-mv-6197325.html'>
-                                                    <img
-                                                    src="Thumbnails//sites/97934/data/images/2015/1/41416742_75.192.192.jpg"
-                                                    alt="Van cổng MV"
-                                                    title="Van cổng MV" />
-                                                </a>
-                                            </div>
-                                            <div class="ProductDetails">
-                                                <strong><a
-                                                    href='/van-cong-mv-6197325.html'>
-                                                        Van cổng MV</a></strong>
-                                            </div>
-                                            <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    2.050.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
-                                            </div>
-                                            <hr class="Clear" />
-                                        </li>
-
-                                        <li class="Even" style="">
-                                            <div class="TopSellerNumber">
-                                                6</div>
-                                            <div id="ProductImage"
-                                                class="ProductImage"
-                                                style="display: none">
-                                                <a class=""
-                                                    href='/van-an-toan-bon-chua-6197324.html'>
-                                                    <img
-                                                    src="Thumbnails//sites/97934/data/images/2015/1/35320602_77.192.192.jpg"
-                                                    alt="Van An Toàn Bồn Chứa"
-                                                    title="Van An Toàn Bồn Chứa" />
-                                                </a>
-                                            </div>
-                                            <div class="ProductDetails">
-                                                <strong><a
-                                                    href='/van-an-toan-bon-chua-6197324.html'>
-                                                        Van An Toàn Bồn
-                                                        Chứa</a></strong>
-                                            </div>
-                                            <div class="ProductPrice">
-                                                <div
-                                                    class="retail-price disable">
-                                                    <span
-                                                        class="price-label"></span><span
-                                                        class="price"><strike
-                                                        class="RetailPriceValue">
-                                                    </strike> </span>
-                                                </div>
-                                                <div
-                                                    class="special-price">
-                                                    <span
-                                                        class="price-label"><span>
-                                                            <span
-                                                            class="price">
-                                                                <em>
-                                                                    200.000
-                                                                    ₫</em>
-                                                                </em>
-                                                        </span>
-                                                
-                                                </div>
-                                            </div>
-                                            <hr class="Clear" />
-                                        </li>
+                                        <?php endforeach;?>
 
                                     </ul>
 
@@ -539,27 +223,34 @@
                                 <div></div>
                             </div>
                         </div>
-
+                        <?php endif;?>
+                        <?php
+                            $image_left = $this->getImageLeft();
+                            if ($image_left):
+                        ?>
                         <div id="TextHTML-Module" class="DefaultModule">
+                            <?php
+                                foreach($image_left as $v):
+                                ?>
                             <p>
                                 <img alt=""
-                                    src="sites/95138/data/Upload/2014/12/banner1.jpg"
+                                    src="<?php echo app()->baseUrl;?>/uploads/<?php echo $v->image?>"
                                     style="width: 262px; height: 354px;" />
                             </p>
-
-                            <p>
-                                <img alt=""
-                                    src="sites/105544/data/banners/banner_luoicatgo.jpg?0"
-                                    style="width: 262px; height: 354px;" />
-                            </p>
+                            <?php endforeach;?>
 
                         </div>
+                        <?php endif;?>
                     </div>
                     <div class="wrap-content">
                         <?php echo $content;?>
                     </div>
                     <div class="Clear"></div>
                     <div id="cphMain_ctl00_BottomPane" class="bottom">
+                        <?php
+                            $thuonghieu = $this->getThuongHieu();
+                            if ($thuonghieu):
+                            ?>
                         <div id="TextHTML-Module" class="DefaultModule">
 
                             <div class="defaultTitle TextHTML-Title">
@@ -568,24 +259,11 @@
                             <div class="defaultContent TextHTML-content">
                                 <div class="orther-logo">
                                     <ul>
+                                        <?php foreach($thuonghieu as $v):?>
                                         <li><img alt=""
-                                            src="sites/105544/data/banners/logo1.jpg?0"
+                                            src="<?php echo app()->baseUrl;?>/uploads/<?php echo $v->image?>"
                                             style="width: 160px; height: 100px;" /></li>
-                                        <li><img alt=""
-                                            src="sites/105544/data/banners/logo2.jpg?0"
-                                            style="width: 160px; height: 100px;" /></li>
-                                        <li><img alt=""
-                                            src="sites/105544/data/banners/logo3.jpg?0"
-                                            style="width: 160px; height: 100px;" /></li>
-                                        <li><img alt=""
-                                            src="sites/105544/data/banners/logo4.jpg"
-                                            style="width: 160px; height: 100px;" /></li>
-                                        <li><img alt=""
-                                            src="sites/105544/data/banners/logo5.jpg"
-                                            style="width: 160px; height: 100px;" /></li>
-                                        <li><img alt=""
-                                            src="sites/105544/data/banners/logo6.jpg"
-                                            style="width: 160px; height: 100px;" /></li>
+                                        <?php endforeach;?>
                                     </ul>
                                 </div>
 
@@ -596,6 +274,7 @@
                             </div>
 
                         </div>
+                        <?php endif;?>
 
                         <div id="TextHTML-Module" class="DefaultModule">
                             <div class="banner-content-wrapper">
@@ -706,7 +385,7 @@
                 <div
                     class="f-col f-col1 col-sm-3 col-md-3 col-sms-6 col-smb-12">
                     <div class="footer-static-title">
-                        <h3>Max Shop</h3>
+                        <h3>HEAT TRANSFER LABEL</h3>
                     </div>
                     <div class="footer-static-content">
                         <p>Thiết bị tiêu chuẩn toàn cầu của chúng tôi
@@ -715,7 +394,7 @@
                             lọc</p>
                         <p class="logo-footer">
                             <img alt=""
-                                src="sites/97934/Skins/Ecom01/images/logofooter.png">
+                                src="<?php echo $logo ? app()->baseUrl . '/uploads/' . $logo->image : app()->baseUrl.'sites/97934/upload/Logo/201517133958263.png' ?>">
                         
                         </p>
                     </div>
@@ -726,19 +405,29 @@
                         <h3>Liên hệ</h3>
                     </div>
                     <div class="footer-static-content">
+                        <?php
+                            $contact = $this->getContact();
+                            if($contact['address']):
+                            ?>
                         <p class="address">
-                            <em class="fa fa-map-marker"></em>Tầng 4,
-                            tòa nhà Hanoi Group, 442 Đội Cấn, Ba Đình,
-                            Hà Nội.
+                            <em class="fa fa-map-marker"></em><?php echo strip_tags($contact['address']->content);?>
                         </p>
+                        <?php endif;?>
+                        <?php
+                           if($contact['phone']):
+                            ?>
                         <p class="phone">
-                            <em class="fa fa-mobile"></em>Phone: (04)
-                            6674 23 32
+                            <em class="fa fa-mobile"></em>Phone: <?php echo strip_tags($contact['phone']->content)?>
                         </p>
+                        <?php endif;?>
+                        <?php
+                           if($contact['email']):
+                            ?>
                         <p class="email">
                             <em class="fa fa-envelope"></em>Email:
-                            support@bizweb.vn
+                            <?php echo strip_tags($contact['email']->content);?>
                         </p>
+                        <?php endif;?>
                         <ul class="link-follow ">
                             <li class="first"><a href="#"
                                 class="facebook fa fa-facebook"></a></li>
@@ -759,51 +448,32 @@
                     </div>
                     <div class="footer-static-content">
                         <div id="twitter-feed">
+                            <?php
+                                $tintuc = $this->getTintuc();
+                                if($tintuc):
+                             ?>
                             <div class="tweet-content">
+                                <?php foreach($tintuc as $v):?>
                                 <div class="twitter-article">
                                     <div class="twitter-pic">
                                         <a
-                                            href="https://twitter.com/ThemeVast"><i
+                                            href="<?php echo url('/tin-tuc/chi-tiet/' . $v->id . '/' . $v->alias.'.html')?>"><i
                                             class="fa fa-twitter"></i></a>
                                     </div>
                                     <div class="twitter-text">
                                         <span class="tweetprofilelink"><strong><a
-                                                href="/lua-chon-phuong-phap-bao-tri-thiet-bi-cong-nghiep/a745591.html">Cách
-                                                    bảo trì thiết bị</a></strong>
-                                            <a
-                                            href="/lua-chon-phuong-phap-bao-tri-thiet-bi-cong-nghiep/a745591.html"></a></span><br>
-                                            Lựa chọn phương pháp bảo trì
-                                            thiết bị công nghiệp để đảm
-                                            bảo hiệu quả sản xuất...<br>
+                                                href="<?php echo url('/tin-tuc/chi-tiet/' . $v->id . '/' . $v->alias.'.html')?>"><?php echo $v->name?></a></strong>
+                                            </span><br>
+                                            <?php echo cutStr(html_decode($v->description), 70)?><br>
                                                 <span class="tweet-time"><a
-                                                    href="/lua-chon-phuong-phap-bao-tri-thiet-bi-cong-nghiep/a745591.html">
-                                                        18/12/2014</a></span>
+                                                    href="<?php echo url('/tin-tuc/chi-tiet/' . $v->id . '/' . $v->alias.'.html')?>">
+                                                        <?php echo date('d-m-Y', strtotime($v->created))?></a></span>
                                     
                                     </div>
                                 </div>
-                                <div class="twitter-article">
-                                    <div class="twitter-pic">
-                                        <a
-                                            href="https://twitter.com/ThemeVast"><i
-                                            class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="twitter-text">
-                                        <span class="tweetprofilelink"><strong><a
-                                                href="/phan-loai-va-chon-mua-bom-cong-nghiep/a745593.html">Phân
-                                                    loại máy bơm</a></strong>
-                                            <a
-                                            href="/phan-loai-va-chon-mua-bom-cong-nghiep/a745593.html"></a></span><br>
-                                            Cách tìm hiểu các đặc tính
-                                            của từng loại để phân loại
-                                            và chọn mua một chiếc máy
-                                            bơm công nghiệp<br> <span
-                                                class="tweet-time"><a
-                                                    href="/phan-loai-va-chon-mua-bom-cong-nghiep/a745593.html">
-                                                        18/12/2014</a></span>
-                                    
-                                    </div>
-                                </div>
+                                <?php endforeach;?>
                             </div>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
@@ -829,9 +499,9 @@
         </div>
         
         <div id="Powerby">
-            Thiết kế bởi <a href='http://www.bizweb.vn'
-                title='Giải pháp thiết kế web bán hàng Số 1 Việt Nam'
-                target='_blank'><strong>Bizweb</strong></a>
+            Thiết kế bởi <a href='http://hotelbenluc.com'
+                title='Khách sạn Bến Lức'
+                target='_blank'><strong>pndtam@gmail.com</strong></a>
         </div>
         <div class="Clear"></div>
     </div>

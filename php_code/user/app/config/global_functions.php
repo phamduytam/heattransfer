@@ -544,3 +544,8 @@ function deleteImage($path, $image)
 			return true;
 	}
 }
+
+function html_decode($str)
+{
+	return html_entity_decode($str, ENT_QUOTES, 'UTF-8');
+}

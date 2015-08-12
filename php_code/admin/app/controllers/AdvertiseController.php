@@ -112,16 +112,20 @@ class AdvertiseController extends Controller
 	private function resizeImage($pathImage, $cat_id){
 		if(is_file($pathImage)){
 			$opt = 'exact';
-			if ($cat_id == 4 or $cat_id == 5) {
+			if ($cat_id == 5 or $cat_id == 6) {
 				$w = 262; $h = 356;
 				$opt = 'portrait';
-			} else if($cat_id == 2 or $cat_id == 3){
+			} else if($cat_id == 3 or $cat_id == 4){
 				$w = 263; $h = 211;
-			} else if($cat_id == 1){
+			} else if($cat_id == 2){
 				$w = 554; $h = 447;
-			} elseif ($cat_id == 6) {
+			} elseif ($cat_id == 7) {
 				$w = 160; $h = 100; $opt = 'portrait';
+			} elseif ($cat_id == 1) {
+				return;
 			}
+			
+			
 			// *** 1) Initialise / load image
 			$resizeObj = new resize($pathImage);
 

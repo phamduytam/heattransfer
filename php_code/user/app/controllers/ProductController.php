@@ -12,8 +12,8 @@ class ProductController extends Controller
 			);
 		$this->pageTitle = 'Sản phẩm';
 		$title = $this->pageTitle;
-		//$this->render('index', compact('content', 'title'));
-		$this->render('detail');
+		$this->render('index', compact('content', 'title'));
+		//$this->render('detail');
 	}
 
 	public function actionDetail($id, $alias)

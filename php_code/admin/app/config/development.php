@@ -25,7 +25,7 @@ $setting['db_master'] = array(
 	'connectionString' => 'mysql:host=127.0.0.1;dbname=heattransfer',//banhoamai_new
 	'emulatePrepare' => true,
 	'username' => 'root',//banhoamainew
-	'password' => 'root',//bevunudez
+	'password' => '',//bevunudez
 	'charset' => 'utf8',
 	'enableProfiling' => true,    // SQL文
 	'enableParamLogging' => true, // パラメータ表示に必要
