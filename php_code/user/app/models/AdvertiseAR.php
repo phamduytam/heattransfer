@@ -134,9 +134,14 @@ class AdvertiseAR extends BaseAR
 		return $this->find($criteria);
 	}
 
-	public function getSlide()
+	public function getListImage()
 	{
 		$criteria = $this->getCriteriaListAdvertise();
 		return $this->findAll($criteria);
+	}
+	
+	public function getOneImage() {
+		$criteria = $this->getCriteriaListAdvertise();
+		return $this->find($criteria);
 	}
 }

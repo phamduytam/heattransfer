@@ -6,13 +6,14 @@ class ProductController extends Controller
 		$product = new ProductAR("searchListProduct");
 		$product->status = 1;
 		$content = $product->searchListProduct(15);
-		$this->layout = 'standard';
+		//$this->layout = 'standard';
 		$this->breadcrumbs = array(
 			'Sản phẩm' => ''
 			);
 		$this->pageTitle = 'Sản phẩm';
 		$title = $this->pageTitle;
-		$this->render('index', compact('content', 'title'));
+		//$this->render('index', compact('content', 'title'));
+		$this->render('detail');
 	}
 
 	public function actionDetail($id, $alias)

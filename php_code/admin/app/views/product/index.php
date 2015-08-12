@@ -26,7 +26,7 @@
 			<th>Id <i class="fa fa-sort"></i></th>
 			<th>Tên sản phẩm <i class="fa fa-sort"></i></th>
 			<th>Danh mục 1 <i class="fa fa-sort"></i></th>
-			<th>Danh mục 2 <i class="fa fa-sort"></i></th>
+			<!--<th>Danh mục 2 <i class="fa fa-sort"></i></th>-->
 			<th>Thứ tự <i class="fa fa-sort"></i></th>
 			<th>Trạng thái <i class="fa fa-sort"></i></th>
 			<th>Ngày tạo <i class="fa fa-sort"></i></th>

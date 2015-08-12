@@ -211,6 +211,8 @@
     <script src="<?php echo app()->baseUrl;?>/assets/vendors/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="<?php echo app()->baseUrl;?>/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="<?php echo app()->baseUrl;?>/assets/js/dashboard.js" type="text/javascript"></script>
+    <script src="<?php echo app()->baseUrl;?>/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="<?php echo app()->baseUrl;?>/js/tablesorter/tables.js"></script>
 
 
 <!-- end of page level js -->

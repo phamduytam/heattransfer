@@ -13,7 +13,7 @@ function getSetting(){
 
 $setting = array();
 
-$setting['app_name'] = 'Bàn Ghế Pallet';
+$setting['app_name'] = 'Heat Transfer Label';
 $setting['adminEmail'] = '';
 $setting['enableMail'] = false;
 $setting['enableDeviceCheck'] = false; //端末チェックを行う = true
@@ -22,10 +22,10 @@ $setting['enableDateTo'] = true; //月額パック、コンテンツの終了日
 
 $setting['db_enable_slave'] = false;
 $setting['db_master'] = array(
-	'connectionString' => 'mysql:host=localhost;dbname=mocstyle',//banghepa_db
+	'connectionString' => 'mysql:host=127.0.0.1;dbname=heattransfer',//banghepa_db
 	'emulatePrepare' => true,
 	'username' => 'root',///banghepa_user
-	'password' => '',//admw9465zdkb
+	'password' => 'root',//admw9465zdkb
 	'charset' => 'utf8',
 	'enableProfiling' => true,    // SQL文
 	'enableParamLogging' => true, // パラメータ表示に必要

@@ -22,10 +22,10 @@ $setting['enableDateTo'] = true; //月額パック、コンテンツの終了日
 
 $setting['db_enable_slave'] = false;
 $setting['db_master'] = array(
-	'connectionString' => 'mysql:host=127.0.0.1;dbname=mocstyle',//banhoamai_new
+	'connectionString' => 'mysql:host=127.0.0.1;dbname=heattransfer',//banhoamai_new
 	'emulatePrepare' => true,
 	'username' => 'root',//banhoamainew
-	'password' => '',//bevunudez
+	'password' => 'root',//bevunudez
 	'charset' => 'utf8',
 	'enableProfiling' => true,    // SQL文
 	'enableParamLogging' => true, // パラメータ表示に必要

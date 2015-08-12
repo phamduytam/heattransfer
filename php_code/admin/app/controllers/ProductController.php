@@ -120,12 +120,12 @@ class ProductController extends Controller
 
 	private function resizeImage($pathImage){
 		if(is_file($pathImage)){
-			$w = 900; $h = 645;
+			$w = 576; $h = 576;
 			// *** 1) Initialise / load image
 			$resizeObj = new resize($pathImage);
 
 			// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
-			$resizeObj -> resizeImage($w, $h, 'exact');
+			$resizeObj -> resizeImage($w, $h, 'portrait');
 
 			// *** 3) Save image
 			$resizeObj -> saveImage($pathImage, 100);

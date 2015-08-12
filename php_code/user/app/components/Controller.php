@@ -9,7 +9,7 @@ class Controller extends CController
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
 	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
 	 */
-	public $layout='//layouts/standard';
+	public $layout='//layouts/main';
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
@@ -80,7 +80,8 @@ class Controller extends CController
 			return strip_tags($this->description);
 		else{
 			$description = StaticAR::model()->findByPk(2);
-			return html_entity_decode(strip_tags($description->content), ENT_QUOTES, 'UTF-8');
+			if ($description)
+				return html_entity_decode(strip_tags($description->content), ENT_QUOTES, 'UTF-8');
 		}
 	}
 
@@ -91,7 +92,10 @@ class Controller extends CController
 			return strip_tags($this->keyword);
 		else{
 			$keyword = StaticAR::model()->findByPk(3);
-			return html_entity_decode(strip_tags($keyword->content), ENT_QUOTES, 'UTF-8');
+			if ($keyword) {
+				return html_entity_decode(strip_tags($keyword->content), ENT_QUOTES, 'UTF-8');
+			}
+			
 		}
 	}
 
@@ -99,7 +103,7 @@ class Controller extends CController
 	{
 		$title = 'Bàn Ghế Pallet';
 		if($this->id == 'site')
-			return 'Bàn ghế Pallet, Đóng bàn ghế gỗ giá rẻ - 0936.730.730';
+			return 'Heat Transfer Label';
 		if(strlen($this->pageTitle) && $this->id != 'site')
 			return $this->pageTitle . ' - ' . $title;
 		else{
@@ -121,7 +125,9 @@ class Controller extends CController
 		$model = new Category1AR();
 		$model->parent_id = 0;
 		$category = $model->getCategory();
-		return $category;
+		if ($category)
+			return $category;
+		return false;
 	}
 
 	public function getCategory1($parent_id) {

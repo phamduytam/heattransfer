@@ -24,11 +24,12 @@ $this->pageTitle = 'Product';
 			<?php echo $form->labelEx($model,'cat_id'); ?>
 			<?php echo $form->dropDownList($model,'cat_id',array('0'=>'Danh mục cấp 1') + CHtml::listData($category, 'id', 'name'), array('class' => 'form-control cat_id')); ?>
 </div>
-
+<!--
 <div class="form-group cat1_id">
 			<?php echo $form->labelEx($model,'cat1_id'); ?>
 			<?php echo $form->dropDownList($model,'cat1_id',array('0'=>'Danh mục cấp 2') + CHtml::listData($category1, 'id', 'name'), array('class' => 'form-control')); ?>
 </div>
+-->
 
 <div class="form-group">
 	<?php echo $form->labelEx($model,'name'); ?>

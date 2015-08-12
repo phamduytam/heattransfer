@@ -29,6 +29,11 @@
 	<?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
 </div>
 
+div class="form-group">
+	<?php echo $form->labelEx($model,'url'); ?>
+	<?php echo $form->textField($model,'url', array('class' => 'form-control')); ?>
+</div>
+
 <div class="form-group">
 	<?php echo $form->labelEx($model,'image'); ?>
 	<?php echo $form->fileField($model,'image', array('value' => $model->image)); ?>

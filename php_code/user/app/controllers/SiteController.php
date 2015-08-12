@@ -12,8 +12,18 @@ class SiteController extends Controller
 		//get image slider
 		$model = new AdvertiseAR('getBanner');
 		$model->status = 1;
-		$model->cat_id = 2;
+		$model->cat_id = 1;
 		$advertise = $model->getBanner();
+		
+		// get 1 image right
+		$model->status = 1;
+		$model->cat_id = 2;
+		$image_right_1 = $model->getOneImage();
+		
+		// get 1 image right
+		$model->status = 1;
+		$model->cat_id = 3;
+		$image_right_2 = $model->getOneImage();
 
 		//product index
 		$model = new ProductAR();
@@ -23,10 +33,13 @@ class SiteController extends Controller
 
 		$tmp_model = new StaticAR();
 		$title = $tmp_model->findByPk(6);
+		
+		// add gioi thieu san pham
+		$intro_product = $tmp_model->findByPk(17); 
 
 		$this->layout = 'main';
 
-		$this->render('index', compact('advertise', 'product', 'title'));
+		$this->render('index', compact('advertise', 'product', 'title', 'image_right_1', 'image_right_2', 'intro_product'));
 	}
 
 	/**
