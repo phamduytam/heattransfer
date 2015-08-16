@@ -3,7 +3,7 @@ class TintucController extends Controller
 {
 	public function actionIndex()
 	{
-		$model = new TinTucAR();
+		$model = new TintucAR();
 		$model->status = 1;
 		$content = $model->searchList(4);
 		$this->breadcrumbs = array(
@@ -15,7 +15,7 @@ class TintucController extends Controller
 
 	public function actionDetail($id, $alias)
 	{
-		$model = new TinTucAR();
+		$model = new TintucAR();
 		$tintuc = $model->findByPk($id);
 		if(!$tintuc)
 			throw new CHttpException(404,'The specified post cannot be found.');
