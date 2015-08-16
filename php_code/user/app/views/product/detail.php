@@ -105,6 +105,7 @@ $this->description = $product->description;
                                 
                                 
                                 <div class="ProductActionAdd"><a href="<?php echo app()->baseUrl?>/chi-tiet/<?php echo $value->id?>/ <?php echo $value->alias;?>.html"><span>Chi tiết</span></a></div>
+                                <br><br>
                             </li>
                             <?php endforeach;?>
                         

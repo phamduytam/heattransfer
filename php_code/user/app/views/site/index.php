@@ -141,6 +141,17 @@ $(window).load(function() {
     <?php endif;?>
 </div>
 <div id="cphMain_ctl00_ContentPane" class="center">
+    <?php if($intro_product):?>
+    <div id="HomeFeaturedProducts"
+        class="Block FeaturedProducts DefaultModule CustomProduct-2102788">
+        <div class="defaultTitle TitleContent">
+            <span><?php echo $intro_product->name?></span>
+        </div>
+        <?php echo $intro_product->content?>
+        
+        </div>
+    <?php endif;?>
+    
     <?php if($noibat):?>
     <div id="HomeFeaturedProducts"
         class="Block FeaturedProducts DefaultModule CustomProduct-2102783">
@@ -209,6 +220,7 @@ $(window).load(function() {
 
     </div>
     <?php endif;?>
+    
     <?php if($hot):?>
     <div id="HomeFeaturedProducts"
         class="Block FeaturedProducts DefaultModule CustomProduct-2102788">

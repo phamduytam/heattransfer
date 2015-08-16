@@ -47,7 +47,7 @@ class SiteController extends Controller
 		$title = $tmp_model->findByPk(6);
 		
 		// add gioi thieu san pham
-		$intro_product = $tmp_model->findByPk(17); 
+		$intro_product = $tmp_model->findByPk(12); 
 
 		$this->layout = 'main';
 

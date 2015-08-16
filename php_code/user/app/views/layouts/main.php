@@ -43,25 +43,39 @@
                 <div id="Logo">
                     <div id="LogoContainer">
                         <?php $logo = $this->getLogo();?>
-                        <a href="<?php echo app()->baseUrl;?>"><img
+                        <a href="<?php echo app()->baseUrl;?>/"><img
                             src='<?php echo $logo ? app()->baseUrl . '/uploads/' . $logo->image : app()->baseUrl.'sites/97934/upload/Logo/201517133958263.png' ?>' /></a>
                     </div>
                 </div>
                 <div id="SearchForm">
 
                     <div id="SearchFormContainer">
-                        <form method="POST" action="<?php echo app()->baseUrl;?>/search">
-                            <input name="txtSearch" type="text"
+                        <?php
+                            $form = $this->beginWidget('TbActiveForm', array(
+                                'action'=>sslUrl('san-pham/tim-kiem'),
+                                'id' => 'search-form',
+                                'method' => 'GET',
+                                'htmlOptions'=>array('enctype' => 'multipart/form-data', 'method' => 'GET')
+                                ));
+                        ?>
+                            <input name="keyword" type="text"
                             id="ctlSearch_ctl00_txtSearch"
                             class="search-input" />
-                            <input type="submit"
-                            name="btnSearch" value=""
+                            <input type="submit" value=""
                             class="search-button" />
-                        </form>
+                        <?php
+                            $this->endWidget();
+                            ?>
 
                     </div>
 
                 </div>
+                <div class="hotline">
+                    <?php $contact = $this->getContact();?>
+                    <?php if(isset($contact['phone'])):?>
+                        <span>Hotline:</span> <strong><?php echo strip_tags($contact['phone']->content);?></strong>
+                    <?php endif;?> 
+                    </div>
                 <div class="Clear"></div>
             </div>
             <div id="Menu">
@@ -176,6 +190,32 @@
                                 <div></div>
                             </div>
                         </div>
+                        <?php
+                            $chat = $this->getChat();
+                            if($chat):
+                            ?>
+                        <div id="SideTopSeller"
+                            class="TopSellers Moveable Panel DefaultModule">
+                            <div
+                                class="defaultTitle SideTopSeller-Title">
+                                <span>Hỗ trợ trực tuyến</span>
+                            </div>
+                            <?php foreach ($chat as $v):?>
+                            <div style="overflow: hidden">
+                                <div style="float:left">
+                                <a href="skype:<?php echo $v->nick?>?chat">
+                                <img src="/images/skype.jpg" valign="middle"/>
+                                </a>
+                                </div>
+                                <div style="float: left; height: 40px; line-height: 1.5; padding-left: 15px; font-weight: bold">
+                                <?php echo $v->name?><br>
+                                Phone: <i style="color: red"><?php echo $v->phone?></i>
+                                </div>
+                                </div>
+                                <br>
+                                <?php endforeach;?>
+                        </div>
+                        <?php endif;?>
                         <?php
                             $banchay = $this->getBanChay();
                             if($banchay):
@@ -388,10 +428,9 @@
                         <h3>HEAT TRANSFER LABEL</h3>
                     </div>
                     <div class="footer-static-content">
-                        <p>Thiết bị tiêu chuẩn toàn cầu của chúng tôi
-                            được xây dựng trên nền tảng công nghệ của
-                            các đối tác hàng đầu thế giới đã được chọn
-                            lọc</p>
+                        <?php if(isset($contact['gioithieu'])):?>
+                        <?php echo cutStr(html_decode($contact['gioithieu']->content), 150, '')?>
+                            <?php endif;?>
                         <p class="logo-footer">
                             <img alt=""
                                 src="<?php echo $logo ? app()->baseUrl . '/uploads/' . $logo->image : app()->baseUrl.'sites/97934/upload/Logo/201517133958263.png' ?>">
@@ -481,18 +520,9 @@
                     class="f-col f-col5 col-sm-3 col-md-3 col-sms-6 col-smb-12">
                     <div class="block block-subscribe">
                         <div class="footer-static-title">
-                            <h3>Đăng ký nhận bản tin</h3>
+                            <h3>Bản đồ</h3>
                         </div>
-                        <form id="newsletter-validate-detail"
-                            method="post"
-                            action="http://themevast.com/demo/tv_lozastore1/index.php/newsletter/subscriber/new/">
-                            <div class="footer-static-content">
-                                <div class="form-subscribe-header">
-                                    <label for="newsletter"> Đăng ký
-                                        nhận tin khuyến mãi:</label>
-                                </div>
-                            </div>
-                        </form>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.038542333803!2d106.64818889999998!3d10.8846731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61ec782b539%3A0x90e599f43d6913cf!2zNTExIEzDqiBWxINuIEtoxrDGoW5nLCBUaOG7m2kgQW4sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1436783006382" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

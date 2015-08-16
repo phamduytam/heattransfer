@@ -25,7 +25,7 @@ $defaultMessages = array(
 		<?php
 		if(!empty($Cmessage)){
 			$out = explode("\n", $Cmessage);
-			echo hsp($out[0]);
+			echo html_decode($out[0]);
 			for($i = 1; $i < count($out); $i++){
 				echo '<br>' , hsp($out[$i]);
 			}
@@ -35,7 +35,7 @@ $defaultMessages = array(
 			}else{
 				$Cmessage = $defaultMessages[500];
 			}
-			echo hsp($Cmessage);
+			echo html_decode($Cmessage);
 		}
 		?>
 		</div>

@@ -57,6 +57,7 @@ return array(
 				'san-pham.html' => 'product',
 				'gioi-thieu.html' => 'gioithieu',
 				'san-pham' => 'product',
+				'san-pham/tim-kiem' => 'product/search',
 				'chi-tiet/<id:\w+>/<alias:[\s\S]+>' => 'product/detail',
 				'tu-van/detail/<id:\w+>/<alias:[\s\S]+>' => 'tuvan/detail',
 				'dich-vu/detail/<id:\w+>/<alias:[\s\S]+>' => 'dichvu/detail',

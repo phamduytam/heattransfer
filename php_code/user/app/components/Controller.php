@@ -117,7 +117,7 @@ class Controller extends CController
 
 	public function getTitle()
 	{
-		$title = 'Bàn Ghế Pallet';
+		$title = 'Heat Transfer Label';
 		if($this->id == 'site')
 			return 'Heat Transfer Label';
 		if(strlen($this->pageTitle) && $this->id != 'site')
@@ -182,12 +182,15 @@ class Controller extends CController
 		$phone = $model->findByPk(6);
 
 		$email = $model->findByPk(7);
+		
+		$gioithieu = $model->findByPk(12);
 
 		if ($address && $phone && $email)
 			return array(
 				'address' => $address,
 				'phone' => $phone,
-				'email' => $email
+				'email' => $email,
+				'gioithieu' => $gioithieu,
 				);
 		return false;
 	}
@@ -235,5 +238,13 @@ class Controller extends CController
 		//$html.= '</ul>';
 		//$html.= '</li>';
 		return $html;
+	}
+	
+	public function getChat(){
+		$model = new ChatAR();
+		$chat = $model->findAllListChat();
+		if($chat)
+			return $chat;
+		return false;
 	}
 }

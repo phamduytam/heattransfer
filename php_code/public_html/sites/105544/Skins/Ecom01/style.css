@@ -408,7 +408,7 @@ hr {
 #nav li { position:relative; text-align:left;}
 #nav li.over { z-index:999; }
 #nav a,
-#nav a:hover { display:block; text-decoration:none; }
+#nav a:hover { display:block; text-decoration:none; color: #01a7b2; }
 #nav span { display:block; cursor:pointer; white-space:nowrap; font-weight:bold;}
 #nav li ul span {white-space:normal; }
 
@@ -418,7 +418,7 @@ hr {
 #nav a { float:left; color:#a7c6dd; font-weight:bold; padding: 0 25px;}
 #nav li:first-child a { padding-left: 0;}
 #nav li.over a,
-#nav a:hover {}
+#nav a:hover { color: #01a7b2;}
 #nav li.first a{}
 
 /* 1st Level */
@@ -457,7 +457,7 @@ hr {
     padding:0;
     list-style:none;
 }
-#nav a:link, #nav a:visited
+#nav a
 {
     color: #333;
     font: bold 14px/60px open sans;
@@ -3419,6 +3419,15 @@ ul.ProductList
     display: block;
     max-width: 100%;
 }
+.hotline{
+    padding-top: 50px;
+    float: left;
+    text-align: center;
+    width: 320px;
+    font-size: 24px; 
+}
+.hotline span{ color: #1f1f1f;}
+.hotline strong{ font-weight: normal; color: red;}
 /*End*/
 /***************************/
 /*Other Style*/
