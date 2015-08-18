@@ -3420,14 +3420,14 @@ ul.ProductList
     max-width: 100%;
 }
 .hotline{
-    padding-top: 50px;
+    padding-top: 40px;
     float: left;
     text-align: center;
     width: 320px;
-    font-size: 24px; 
+    line-height: 1.8;
 }
-.hotline span{ color: #1f1f1f;}
-.hotline strong{ font-weight: normal; color: red;}
+.hotline > span{ color: #fff; font-size: 24px; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;}
+.hotline p{ padding-bottom: 5px;}
 /*End*/
 /***************************/
 /*Other Style*/

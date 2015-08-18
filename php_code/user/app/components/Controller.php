@@ -133,7 +133,9 @@ class Controller extends CController
 		if(strlen($this->fbImage))
 			return 'http://heattransferlabel.com.vn/uploads/'.$this->fbImage;
 		else{
-			return 'http://heattransferlabel.com.vn/sites/97934/upload/Logo/201517133958263.png';
+			$logo = $this->getLogo();
+			if($logo)
+				return 'http://heattransferlabel.com.vn/uploads/'.$logo->image;
 		}	
 	}
 
@@ -245,6 +247,24 @@ class Controller extends CController
 		$chat = $model->findAllListChat();
 		if($chat)
 			return $chat;
+		return false;
+	}
+	
+	public function getPage()
+	{
+		$model = new StaticAR();
+		$page1 = $model->findByPk(14);
+
+		$page2 = $model->findByPk(15);
+
+		$page3 = $model->findByPk(16);
+
+		if ($page1 && $page2 && $page3)
+			return array(
+				'page1' => $page1,
+				'page2' => $page2,
+				'page3' => $page3
+				);
 		return false;
 	}
 }

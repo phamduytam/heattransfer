@@ -66,7 +66,7 @@ $setting['cache']=array(
 );
 
 // Image path
-$setting['imagePath'] = '/public_html/uploads/';
+$setting['imagePath'] = '/uploads/';
 //アプリで共通で使う画像などのパス
 $setting['shareLocal'] = '';
 $setting['shareRemote'] = 'http://akspm2img.showtime.jp/ver0001';

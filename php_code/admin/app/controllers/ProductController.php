@@ -42,6 +42,7 @@ class ProductController extends Controller
 					if($imageUploadFile !== null) // validate to save file
 					{
 						$pathImage = dirname(dirname(app()->basePath)) . app()->params['imagePath'].$imageFileName;
+						echo $pathImage;
 						$imageUploadFile->saveAs($pathImage);
 						// resize
 						$this->resizeImage($pathImage);

@@ -73,7 +73,8 @@
                 <div class="hotline">
                     <?php $contact = $this->getContact();?>
                     <?php if(isset($contact['phone'])):?>
-                        <span>Hotline:</span> <strong><?php echo strip_tags($contact['phone']->content);?></strong>
+                        <span>Hotline</span><br>
+                         <strong><?php echo html_decode($contact['phone']->content);?></strong>
                     <?php endif;?> 
                     </div>
                 <div class="Clear"></div>
@@ -325,15 +326,14 @@
                                             <p class="icon">
                                                 <em class="fa fa-plane"></em>
                                             </p>
+                                            <?php
+                                                $page = $this->getPage();
+                                                if(isset($page['page1'])):
+                                                ?>
+                                            <h3 class="title"><?php echo $page['page1']->name?></h3>
 
-                                            <h3 class="title">MIỄN PHÍ
-                                                VẬN CHUYỂN</h3>
-
-                                            <p class="des">Miễn phí vận
-                                                chuyển tận nơi trên phạm
-                                                vi toàn quốc, chất lượng
-                                                đảm bảo đến tận tay
-                                                người tiêu dùng</p>
+                                            <p class="des"><?php echo strip_tags($page['page1']->content)?></p>
+                                                <?php endif;?>
                                         </div>
                                     </div>
 
@@ -345,15 +345,13 @@
                                                     class="fa fa-clock-o"></em>
                                             </p>
 
-                                            <h3 class="title">ĐỔI TRẢ
-                                                HÀNG TRONG 30 NGÀY</h3>
+                                            <?php
+                                                if(isset($page['page2'])):
+                                                ?>
+                                            <h3 class="title"><?php echo $page['page2']->name?></h3>
 
-                                            <p class="des">Được đổi trả
-                                                hàng 1 đổi 1 nếu trong
-                                                30 ngày sử dụng gặp vấn
-                                                đề về mặt kỹ thuật, chi
-                                                phí vận chuyển trả hàng
-                                                free</p>
+                                            <p class="des"><?php echo strip_tags($page['page2']->content)?></p>
+                                                <?php endif;?>
                                         </div>
                                     </div>
 
@@ -364,52 +362,18 @@
                                                 <em class="fa fa-phone"></em>
                                             </p>
 
-                                            <h3 class="title">HỖ TRỢ
-                                                24/7</h3>
+                                            <?php
+                                                if(isset($page['page3'])):
+                                                ?>
+                                            <h3 class="title"><?php echo $page['page3']->name?></h3>
 
-                                            <p class="des">Trung tâm
-                                                chăm sóc khách hàng
-                                                thường trực 24/7 hỗ trợ
-                                                giải đáp mọi thắc mắc
-                                                của khách hàng trong quá
-                                                trình sử dụng</p>
+                                            <p class="des"><?php echo strip_tags($page['page3']->content)?></p>
+                                                <?php endif;?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                        </div>
-                        <div class=" DefaultModule EmailSubscription">
-                            <div
-                                class="defaultTitle EmailSubscription-Title">
-                                <span> Đăng ký nhận mail</span>
-                            </div>
-                            <div
-                                class="defaultContent EmailSubscription-content">
-                                <div id="subscribe_form"
-                                    class="BlockContent">
-
-                                    <label class="subscribe_email">
-                                        Email</label> <input
-                                        name="ctl00$cphMain$ctl00$ctl02$ctl00$txtEmail"
-                                        type="text"
-                                        id="cphMain_ctl00_ctl02_ctl00_txtEmail"
-                                        class="Textbox subscribe_email_input" />
-                                    <input type="submit"
-                                        name="ctl00$cphMain$ctl00$ctl02$ctl00$btnReg"
-                                        value="Đăng ký"
-                                        id="cphMain_ctl00_ctl02_ctl00_btnReg"
-                                        class="Button" />
-                                </div>
-                                <div class="Clear"></div>
-                            </div>
-                            <div
-                                class="clear defaultFooter EmailSubscription-footer">
-                                <div></div>
-                            </div>
-                            <div id="Fanc" style="display: none;">
-                                <div class="holder"></div>
-                            </div>
                         </div>
 
                     </div>
@@ -522,7 +486,7 @@
                         <div class="footer-static-title">
                             <h3>Bản đồ</h3>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.038542333803!2d106.64818889999998!3d10.8846731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61ec782b539%3A0x90e599f43d6913cf!2zNTExIEzDqiBWxINuIEtoxrDGoW5nLCBUaOG7m2kgQW4sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1436783006382" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.3828558264945!2d106.35919700000001!3d10.549183600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310ac81cd8dbc9d1%3A0xcbbbda8508507545!2zxJDGsOG7nW5nIHPhu5EgNiwgTOG7o2kgQsOsbmggTmjGoW4sIHRwLiBUw6JuIEFuLCBMb25nIEFuLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1439815945126" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

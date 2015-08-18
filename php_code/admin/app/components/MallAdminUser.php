@@ -1,13 +1,13 @@
-<?php
-class MallAdminUser extends CWebUser
-{
-	public function events()
-	{
-		return array(
-		);
-	}
-	
-}
-
-
+<?php
+class MallAdminUser extends CWebUser
+{
+	public function events()
+	{
+		return array(
+		);
+	}
+	
+}
+
+
 ?>

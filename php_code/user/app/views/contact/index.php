@@ -11,7 +11,7 @@
         <h2></h2>
     </div>
     <div class="defaultContent contact-content">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.038542333803!2d106.64818889999998!3d10.8846731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61ec782b539%3A0x90e599f43d6913cf!2zNTExIEzDqiBWxINuIEtoxrDGoW5nLCBUaOG7m2kgQW4sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1436783006382" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.3828558264945!2d106.35919700000001!3d10.549183600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310ac81cd8dbc9d1%3A0xcbbbda8508507545!2zxJDGsOG7nW5nIHPhu5EgNiwgTOG7o2kgQsOsbmggTmjGoW4sIHRwLiBUw6JuIEFuLCBMb25nIEFuLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1439815945126" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br><br>
         <div id="cphMain_ctl00_ctl00_plCompanyInfo" class="contact companyInfo" style="width:100%;">
 	
